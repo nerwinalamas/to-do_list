@@ -29,7 +29,11 @@ export const todoSlice = createSlice({
     },
     deleteTodo: (state, action) => {
       state.value = state.value.filter((t) => t.id !== action.payload.id);
-    },
+    },   
+    isCompleteTodo: (state, action) => {
+      const index = state.value.findIndex((t) => t.id === action.payload.id);
+			state.value[index].completed = action.payload.completed;
+    }
   },
 });
 
