@@ -3,16 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "../features/todo/todoSlice";
 
 const AddTodo = () => {
-    const [desc, setDesc] = useState("");
+  const [desc, setDesc] = useState("");
 
-    const dispatch = useDispatch();
-    const todo = useSelector((state) => state.todo.value);
+  const dispatch = useDispatch();
+  const todo = useSelector((state) => state.todo.value);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(addTodo({ id: todo[todo.length - 1].id + 1, desc, completed: false }));
-        setDesc("");
-      };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(
+      addTodo({ id: Date.now(), desc, completed: false })
+      // not able to add new note when the array is undefined
+      // addTodo({ id: todo[todo.length - 1].id + 1, desc, completed: false })
+    );
+    setDesc("");
+  };
 
   return (
     <>
