@@ -56,8 +56,16 @@ const TodoItem = ({ id, desc, completed }) => {
               className="w-56 md:w-64 px-1 outline-slate-800 outline-1 outline rounded-md flex-1"
             />
             <div className="flex gap-2 text-2xl font-bold text-slate-800">
-              <BsCheckLg title="Save" onClick={(e) => handleUpdate(e, id, newDesc)} />
-              <RxCross2 title="Cancel" onClick={handleUpdateCancel} />
+              <BsCheckLg
+                title="Save"
+                onClick={(e) => handleUpdate(e, id, newDesc)}
+                className="cursor-pointer"
+              />
+              <RxCross2
+                title="Cancel"
+                onClick={handleUpdateCancel}
+                className="cursor-pointer"
+              />
             </div>
           </form>
         ) : (
@@ -78,10 +86,16 @@ const TodoItem = ({ id, desc, completed }) => {
               </label>
             </div>
             <div className="flex gap-2 text-2xl text-slate-800">
-              <PiNotePencilDuotone title="Edit"
+              <PiNotePencilDuotone
+                title="Edit"
                 onClick={() => handleUpdateClick(id, desc)}
+                className="cursor-pointer"
               />
-              <AiFillDelete title="Delete" onClick={() => handleDelete(id)} />
+              <AiFillDelete
+                title="Delete"
+                onClick={() => handleDelete(id)}
+                className="cursor-pointer"
+              />
             </div>
           </>
         )}
