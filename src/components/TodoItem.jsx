@@ -4,7 +4,6 @@ import {
   isCompleteTodo,
   updateTodo,
 } from "../features/todo/todoSlice";
-import { TiDelete } from "react-icons/ti";
 import { AiFillDelete } from "react-icons/ai";
 import { PiNotePencilDuotone } from "react-icons/pi";
 import { BsCheckLg } from "react-icons/bs";
