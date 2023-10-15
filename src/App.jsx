@@ -22,7 +22,8 @@ const App = () => {
     return todos.length;
   };
 
-  const handleBtnPost = () => {
+  const handleBtnPost = (e) => {
+    e.stopPropagation();
     setTogglePost((prevState) => !prevState);
   };
 
@@ -49,7 +50,7 @@ const App = () => {
 
   return (
     <>
-      <div className="w-screen h-screen flex flex-col items-center justify-center">
+      <div className="w-screen h-screen flex flex-col items-center justify-center" onClick={() => setTogglePost(false)}>
         <div className="w-80 h-5/6 md:w-96 mt-10 p-3 flex flex-col gap-2 rounded-lg relative">
           <div className="flex justify-between items-center">
             <h1 className="text-3xl font-bold select-none">To-do list</h1>
